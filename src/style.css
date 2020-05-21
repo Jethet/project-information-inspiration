@@ -1,16 +1,44 @@
 
 body {
   margin: 0 auto;
-  text-align: center;
   max-width: 90%;
 }
-
+/* NAVBAR */
 #navbar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 auto;
+  padding: 10px;
   background-color: cornflowerblue;
   color: whitesmoke;
 }
 
+#home-icon {
+  display: flex;
+  align-self: start;
+}
+
+
+#nav-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .link-button {
-  color: whitesmoke;
+  display: flex;
+  background-color: whitesmoke;
+  color: black;
   font-size: 12px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+/* CARD */
+.card-container {
+  display: flex;
+
+}
+
+.card {
+  width: 30%;
+  margin: 15px;
 }

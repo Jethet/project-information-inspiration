@@ -1,20 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Search from "./Search";
-import CreateCard from "./CreateCard";
 
 function Navbar() {
   return (
     <div id="navbar">
       <nav className="navbar">
-        <a className="navbar-brand">Navbar</a>
-        <button className="link-button">
-          <Link to="/search">Search Results</Link>
-        </button>
+        <div id="nav-buttons">
+            <Link to="/">
+              <div id="home-icon">
+                <img src="/images/homelink-white.png" width="25" height="25" alt="Home" />
+              </div>
+            </Link>
 
-        <button className="link-button">
-          <Link to="/create">Create a Card</Link>
-        </button>
+          <button className="link-button" type="submit">
+            <Link to="/search">Search</Link>
+          </button>
+
+          <button className="link-button">
+            <Link to="/create">New Card</Link>
+          </button>
+        </div>
       </nav>
     </div>
   );

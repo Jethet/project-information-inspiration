@@ -21,4 +21,4 @@ class CreateCard extends React.Component {
 
 export default CreateCard
 
-{/* <small class="text-muted">Created on {moment().format("DD-MM-YYYY")}</small> */}
+{/* <small className="text-muted">Created on {moment().format("DD-MM-YYYY")}</small> */}
