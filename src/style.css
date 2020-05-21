@@ -5,3 +5,12 @@ body {
   max-width: 90%;
 }
 
+#navbar {
+  background-color: cornflowerblue;
+  color: whitesmoke;
+}
+
+.link-button {
+  color: whitesmoke;
+  font-size: 12px;
+}
