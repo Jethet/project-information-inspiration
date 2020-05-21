@@ -42,3 +42,32 @@ body {
   width: 30%;
   margin: 15px;
 }
+/* CREATE CARD */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+#card-header {
+  display: flex;
+  justify-content: center;
+}
+
+.card-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.create-button {
+  color: whitesmoke;
+}
+
+/* SEARCH RESULTS */
+
+#search-results-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}

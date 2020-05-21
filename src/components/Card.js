@@ -2,29 +2,7 @@ import React from "react";
 import moment from "moment"
 
 class Card extends React.Component {
-  state = {
-    projectOne: {
-      cardTitle: "Website project",
-      cardDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      cardImage: "",
-      dateCreated: "Jan 15, 2020",
-      searchTags: ['website ', 'React ', 'DOM ', 'Javascript'],
-    },
-    projectTwo: {
-      cardTitle: "School project",
-      cardDescription: "Aed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniamLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      cardImage: "",
-      dateCreated: "March 25, 2020",
-      searchTags: ['CRUD ', 'React ', 'Router ', 'Javascript '],
-    },
-    projectThree: {
-      cardTitle: "Project Kid's Play",
-      cardDescription: "Labore et dolore magna aliqua. Ut enim ad minim veniamLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      cardImage: "",
-      dateCreated: "April 5, 2020",
-      searchTags: ['Canvas ', 'DOM ', 'Javascript'],
-    }
-  }
+  
 
   render() {
     return (
