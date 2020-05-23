@@ -1,12 +1,10 @@
-
 body {
   margin: 0 auto;
-  max-width: 90%;
+  max-width: 100%;
 }
 /* NAVBAR */
 #navbar {
-  display: flex;
-  justify-content: flex-end;
+  display: absolute;
   margin: 0 auto;
   padding: 10px;
   background-color: cornflowerblue;
@@ -17,7 +15,6 @@ body {
   display: flex;
   align-self: start;
 }
-
 
 #nav-buttons {
   display: flex;
@@ -35,15 +32,13 @@ body {
 /* CARD */
 .card-container {
   display: flex;
-
 }
 
 .card {
-  width: 30%;
-  margin: 15px;
+  width: 25%
 }
 /* CREATE CARD */
-.card-container {
+.create-card-container {
   display: flex;
   flex-direction: column;
   margin-top: 15px;
@@ -60,6 +55,12 @@ body {
   margin-top: 10px;
 }
 
+.form-control {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
 .create-button {
   color: whitesmoke;
 }
@@ -67,7 +68,27 @@ body {
 /* SEARCH RESULTS */
 
 #search-results-header {
+  color: rgb(36, 105, 233);
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.search-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-card {
+  max-width: 200px;
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid rgb(36, 105, 233);
+  border-radius: 10px;
+}
+
+.search-card-title {
+  color: rgb(36, 105, 233);
 }

@@ -5,13 +5,13 @@ function Navbar() {
   return (
     <div id="navbar">
       <nav className="navbar">
+        <Link to="/">
+          <div id="home-icon">
+            <img src="/images/homelink-white.png" width="25" height="25" alt="Home" />
+          </div>
+        </Link>
+        
         <div id="nav-buttons">
-            <Link to="/">
-              <div id="home-icon">
-                <img src="/images/homelink-white.png" width="25" height="25" alt="Home" />
-              </div>
-            </Link>
-
           <button className="btn link-button" type="submit">
             <Link to="/search">Search</Link>
           </button>
