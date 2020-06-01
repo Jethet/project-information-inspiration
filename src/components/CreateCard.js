@@ -1,13 +1,16 @@
 import React from "react";
 
 class CreateCard extends React.Component {
-  state = {
-    cardTitle: "",
-    cardDescription: "",
-    cardImage: "",
-    dateCreated: "",
-    searchTags: [],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      cardTitle: "",
+      cardDescription: "",
+      cardImage: "",
+      dateCreated: "",
+      searchTags: [],
+    };
+  }
 
   handleChange = (e) => {
     let { name, value } = e.target;
@@ -19,7 +22,7 @@ class CreateCard extends React.Component {
 
     const { cardTitle } = e.target;
     let nameCheck = localStorage.getItem(cardTitle);
-    
+
     if (nameCheck === null) {
       // state is an object and can be stringified
       localStorage.setItem(cardTitle, JSON.stringify(this.state));
@@ -27,7 +30,6 @@ class CreateCard extends React.Component {
       alert("This card name already exists");
     }
     console.log(cardTitle);
-
 
     this.setState({
       cardTitle: "",
@@ -121,7 +123,3 @@ class CreateCard extends React.Component {
 }
 
 export default CreateCard;
-
-{
-  /*  */
-}
