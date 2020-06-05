@@ -31,7 +31,7 @@ export default function infoCardsReducer(infoCards = [], action) {
   }
 }
 
-store = createStore(reducer);
+const store = createStore(reducer);
 store.subscribe(() => {
   console.log(store.getState());
 });
