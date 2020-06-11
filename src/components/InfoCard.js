@@ -1,6 +1,14 @@
 import React from "react";
 
 class InfoCard extends React.Component {
+  state = {
+    cardTitle: "",
+    cardDescription: "",
+    cardImage: "",
+    dateCreated: "",
+    searchTags: [],
+  };
+  
   render() {
     return (
       <div className="card-container">
