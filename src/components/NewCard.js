@@ -6,7 +6,7 @@ class NewCard extends React.Component {
     this.state = {
       cardTitle: "",
       cardDescription: "",
-      cardImage: "",
+      // cardImage: "",
       dateCreated: "",
       searchTags: [],
     };
@@ -20,21 +20,21 @@ class NewCard extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { cardTitle } = e.target;
+    const { cardTitle, cardDescription, dateCreated, searchTags } = this.state;
     let nameCheck = localStorage.getItem(cardTitle);
+    console.log(cardTitle);
 
     if (nameCheck === null) {
       // state is an object and can be stringified
-      localStorage.setItem(cardTitle, JSON.stringify(this.state));
+      localStorage.setItem(cardTitle, JSON.stringify({cardTitle, cardDescription, dateCreated, searchTags}));
     } else {
       alert("This card name already exists");
     }
-    console.log(cardTitle);
 
     this.setState({
       cardTitle: "",
       cardDescription: "",
-      cardImage: "",
+      // cardImage: "",
       dateCreated: "",
       searchTags: [],
     });
@@ -56,7 +56,7 @@ class NewCard extends React.Component {
                     className="form-control"
                     type="text"
                     placeholder="Enter card title"
-                    required
+                    // required
                     autoComplete="off"
                     name="cardTitle"
                     value={this.state.cardTitle}
@@ -71,7 +71,7 @@ class NewCard extends React.Component {
                     className="form-control"
                     type="text"
                     placeholder="Enter card description"
-                    required
+                    // required
                     autoComplete="off"
                     name="cardDescription"
                     value={this.state.cardDescription}
@@ -86,7 +86,7 @@ class NewCard extends React.Component {
                     className="form-control"
                     type="text"
                     placeholder="Enter search tags separated by commas"
-                    required
+                    // required
                     autoComplete="off"
                     name="searchTags"
                     value={this.state.searchTags}
@@ -101,16 +101,15 @@ class NewCard extends React.Component {
                     className="form-control"
                     type="date"
                     name="dateCreated"
-                    required
-                    value={this.props.dateCreated}
+                    // required
+                    value={this.state.dateCreated}
                     onChange={this.handleChange}
                   />
                 </label>
               </div>
               <button
                 type="submit"
-                className="btn create-button"
-                style={{ backgroundColor: "cornflowerblue" }}
+                className="btn btn-outline-success my-2 my-sm-0"
               >
                 Create Card
               </button>
