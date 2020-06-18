@@ -14,7 +14,6 @@ export function deleteInfoCard() {
   };
 }
 
-
 export default function infoCardsReducer(infoCards = [], action) {
   switch (action.type) {
     case "CREATE_INFOCARD":

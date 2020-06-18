@@ -1,7 +1,9 @@
+
 body {
   margin: 0 auto;
   max-width: 100%;
 }
+
 /* NAVBAR */
 #navbar {
   display: absolute;
@@ -31,12 +33,15 @@ body {
 }
 /* CARD */
 .card-container {
-  display: flex;
+  margin: 0 auto;
+  /* border: 2px solid red; */
 }
 
 .card {
-  width: 25%
+  width: 30%;
+  margin: 10px;
 }
+
 /* CREATE CARD */
 .create-card-container {
   display: flex;
