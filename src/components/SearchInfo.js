@@ -1,8 +1,25 @@
 import React from "react";
 
-function SearchInfo() {
+function SearchInfo(props) {
+  function handleSearch(e) {
+    e.preventDefault()
+    
+    let searchItem = e.target[0].value;
+    console.log(e.target[0].value);
+    
+
+    let searchResult = localStorage.getItem(searchItem)
+
+    // if (localStorage.getItem(searchItem) === null) {
+    //   alert("Not found");
+    // } else (cardTitle.includes(searchItem)) {
+      // JSON.parse();
+      console.log(searchResult);
+    
+  }
+
   return (
-    <form className="form-inline">
+    <form className="form-inline" onSubmit={handleSearch}>
       <input
         className="form-control mr-sm-2"
         type="search"
