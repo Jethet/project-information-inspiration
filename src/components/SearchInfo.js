@@ -1,21 +1,25 @@
 import React from "react";
 
 function SearchInfo(props) {
+
   function handleSearch(e) {
     e.preventDefault()
+
+    let cardList = []
     
+
     let searchItem = e.target[0].value;
-    console.log(e.target[0].value);
-    
+    // console.log(e.target[0].value);
 
     let searchResult = localStorage.getItem(searchItem)
+    // console.log(searchResult);
 
-    // if (localStorage.getItem(searchItem) === null) {
-    //   alert("Not found");
-    // } else (cardTitle.includes(searchItem)) {
-      // JSON.parse();
-      console.log(searchResult);
-    
+    if (localStorage.getItem(searchItem) === null) {
+      alert("Not found");
+    } else {
+      console.log(JSON.parse(searchResult));
+       
+    }
   }
 
   return (
@@ -33,4 +37,4 @@ function SearchInfo(props) {
   );
 }
 
-export default SearchInfo;
+export default SearchInfo

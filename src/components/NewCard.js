@@ -6,9 +6,9 @@ class NewCard extends React.Component {
     this.state = {
       cardTitle: "",
       cardDescription: "",
-      // cardImage: "",
       dateCreated: "",
       searchTags: [],
+      cardList: []
     };
   }
 
@@ -22,11 +22,22 @@ class NewCard extends React.Component {
 
     const { cardTitle, cardDescription, dateCreated, searchTags } = this.state;
     let nameCheck = localStorage.getItem(cardTitle);
-    console.log(cardTitle);
 
+    // set function for unique id to variable and add it to JSON.stringify
     if (nameCheck === null) {
+      let id = Math.random().toString(36).substr(2, 7);
+  
       // state is an object and can be stringified
-      localStorage.setItem(cardTitle, JSON.stringify({cardTitle, cardDescription, dateCreated, searchTags}));
+      let newCard = JSON.stringify({id, cardTitle, cardDescription, dateCreated, searchTags})
+      localStorage.setItem(cardTitle, newCard)
+      console.log("This is a new card:", newCard);
+      
+      let parsedNewCard = JSON.parse(newCard)
+      let parsedCardList = this.state.cardList.push(parsedNewCard)
+
+      console.log("Parsed card array:", parsedCardList);
+      return parsedCardList
+      
     } else {
       alert("This card name already exists");
     }
@@ -34,10 +45,13 @@ class NewCard extends React.Component {
     this.setState({
       cardTitle: "",
       cardDescription: "",
-      // cardImage: "",
       dateCreated: "",
       searchTags: [],
+      cardList: parsedCardList
     });
+
+    console.log("This is outside handleSubmit", this.state.cardList);
+
   };
 
   render() {
