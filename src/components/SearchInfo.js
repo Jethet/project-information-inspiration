@@ -5,9 +5,6 @@ function SearchInfo(props) {
   function handleSearch(e) {
     e.preventDefault()
 
-    let cardList = []
-    
-
     let searchItem = e.target[0].value;
     // console.log(e.target[0].value);
 
@@ -18,8 +15,8 @@ function SearchInfo(props) {
       alert("Not found");
     } else {
       console.log(JSON.parse(searchResult));
-       
     }
+    e.target[0].value = ""
   }
 
   return (

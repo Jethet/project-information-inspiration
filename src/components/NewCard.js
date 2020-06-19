@@ -8,7 +8,7 @@ class NewCard extends React.Component {
       cardDescription: "",
       dateCreated: "",
       searchTags: [],
-      cardList: []
+      cardList: [],
     };
   }
 
@@ -26,18 +26,23 @@ class NewCard extends React.Component {
     // set function for unique id to variable and add it to JSON.stringify
     if (nameCheck === null) {
       let id = Math.random().toString(36).substr(2, 7);
-  
+
       // state is an object and can be stringified
-      let newCard = JSON.stringify({id, cardTitle, cardDescription, dateCreated, searchTags})
-      localStorage.setItem(cardTitle, newCard)
+      let newCard = JSON.stringify({
+        id,
+        cardTitle,
+        cardDescription,
+        dateCreated,
+        searchTags,
+      });
+      localStorage.setItem(cardTitle, newCard);
       console.log("This is a new card:", newCard);
-      
-      let parsedNewCard = JSON.parse(newCard)
-      let parsedCardList = this.state.cardList.push(parsedNewCard)
+
+      let parsedNewCard = JSON.parse(newCard);
+      let parsedCardList = this.state.cardList.push(parsedNewCard);
 
       console.log("Parsed card array:", parsedCardList);
-      return parsedCardList
-      
+      return parsedCardList;
     } else {
       alert("This card name already exists");
     }
@@ -47,11 +52,10 @@ class NewCard extends React.Component {
       cardDescription: "",
       dateCreated: "",
       searchTags: [],
-      cardList: parsedCardList
+      // cardList: parsedCardList
     });
 
     console.log("This is outside handleSubmit", this.state.cardList);
-
   };
 
   render() {
@@ -121,10 +125,7 @@ class NewCard extends React.Component {
                   />
                 </label>
               </div>
-              <button
-                type="submit"
-                className="btn btn-outline-success my-2 my-sm-0"
-              >
+              <button type="submit" className="btn btn-outline-success my-2 my-sm-0">
                 Create Card
               </button>
             </form>
