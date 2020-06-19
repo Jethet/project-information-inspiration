@@ -42,7 +42,8 @@ class NewCard extends React.Component {
       let parsedCardList = this.state.cardList.push(parsedNewCard);
 
       console.log("Parsed card array:", parsedCardList);
-      return parsedCardList;
+      this.setState({cardlist: parsedCardList})
+
     } else {
       alert("This card name already exists");
     }
@@ -52,7 +53,6 @@ class NewCard extends React.Component {
       cardDescription: "",
       dateCreated: "",
       searchTags: [],
-      // cardList: parsedCardList
     });
 
     console.log("This is outside handleSubmit", this.state.cardList);
