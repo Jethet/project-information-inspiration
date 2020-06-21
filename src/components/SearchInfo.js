@@ -1,5 +1,9 @@
 import React from "react";
 
+// SEARCH has to be done on all words, lowercase - need to
+// create an array cardList with all information to be
+// filtered and returned
+
 function SearchInfo(props) {
 
   function handleSearch(e) {
@@ -16,6 +20,7 @@ function SearchInfo(props) {
     } else {
       console.log(JSON.parse(searchResult));
     }
+
     e.target[0].value = ""
   }
 

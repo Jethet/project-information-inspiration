@@ -1,13 +1,16 @@
 import React from "react";
+import SearchInfo from "./SearchInfo"
 
 class NewCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cardTitle: "",
-      cardDescription: "",
-      dateCreated: "",
-      searchTags: [],
+      card: {
+        cardTitle: "",
+        cardDescription: "",
+        dateCreated: "",
+        searchTags: [],
+      },
       cardList: [],
     };
   }
@@ -21,6 +24,8 @@ class NewCard extends React.Component {
     e.preventDefault();
 
     const { cardTitle, cardDescription, dateCreated, searchTags } = this.state;
+    console.log(cardTitle);
+
     let nameCheck = localStorage.getItem(cardTitle);
 
     // set function for unique id to variable and add it to JSON.stringify
@@ -38,21 +43,22 @@ class NewCard extends React.Component {
       localStorage.setItem(cardTitle, newCard);
       console.log("This is a new card:", newCard);
 
-      let parsedNewCard = JSON.parse(newCard);
-      let parsedCardList = this.state.cardList.push(parsedNewCard);
-
+      let parsedNewCard = JSON.parse(newCard)
+      let parsedCardList = this.state.cardList.push(parsedNewCard)
+      this.setState({cardList: parsedCardList})
+      
       console.log("Parsed card array:", parsedCardList);
-      this.setState({cardlist: parsedCardList})
-
     } else {
       alert("This card name already exists");
     }
 
     this.setState({
-      cardTitle: "",
-      cardDescription: "",
-      dateCreated: "",
-      searchTags: [],
+      card: {
+        cardTitle: "",
+        cardDescription: "",
+        dateCreated: "",
+        searchTags: []
+      }
     });
 
     console.log("This is outside handleSubmit", this.state.cardList);
@@ -61,6 +67,7 @@ class NewCard extends React.Component {
   render() {
     return (
       <div>
+        <SearchInfo cardList={this.state.cardList}/>
         <div className="create-card-container">
           <div id="card-header">
             <h3>Create a new information card</h3>
@@ -77,7 +84,7 @@ class NewCard extends React.Component {
                     // required
                     autoComplete="off"
                     name="cardTitle"
-                    value={this.state.cardTitle}
+                    value={this.state.cardTitle || ""}
                     onChange={this.handleChange}
                   />
                 </label>
@@ -92,7 +99,7 @@ class NewCard extends React.Component {
                     // required
                     autoComplete="off"
                     name="cardDescription"
-                    value={this.state.cardDescription}
+                    value={this.state.cardDescription || ""}
                     onChange={this.handleChange}
                   />
                 </label>
@@ -107,7 +114,7 @@ class NewCard extends React.Component {
                     // required
                     autoComplete="off"
                     name="searchTags"
-                    value={this.state.searchTags}
+                    value={this.state.searchTags || ""}
                     onChange={this.handleChange}
                   />
                 </label>
@@ -120,7 +127,7 @@ class NewCard extends React.Component {
                     type="date"
                     name="dateCreated"
                     // required
-                    value={this.state.dateCreated}
+                    value={this.state.dateCreated || ""}
                     onChange={this.handleChange}
                   />
                 </label>
