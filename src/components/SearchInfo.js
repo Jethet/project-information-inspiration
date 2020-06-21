@@ -1,4 +1,5 @@
 import React from "react";
+import SearchBar from "./SearchBar"
 
 // SEARCH has to be done on all words, lowercase - need to
 // create an array cardList with all information to be
@@ -25,17 +26,9 @@ function SearchInfo(props) {
   }
 
   return (
-    <form className="form-inline" onSubmit={handleSearch}>
-      <input
-        className="form-control mr-sm-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
-      <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-        Search
-      </button>
-    </form>
+    <div>
+      <SearchBar handleSearch={props.handleSearch}/>
+    </div>
   );
 }
 
