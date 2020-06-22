@@ -31,35 +31,33 @@ class NewCard extends React.Component {
     // set function for unique id to variable and add it to JSON.stringify
     if (nameCheck === null) {
       let id = Math.random().toString(36).substr(2, 7);
-
-      // state is an object and can be stringified
-      let newCard = JSON.stringify({
-        id,
-        cardTitle,
-        cardDescription,
-        dateCreated,
-        searchTags,
-      });
-      localStorage.setItem(cardTitle, newCard);
+      let newCard = {
+          id,
+          cardTitle,
+          cardDescription,
+          dateCreated,
+          searchTags,
+        };
       console.log("This is a new card:", newCard);
+      const newCardList = this.state.cardList
+      newCardList.push(newCard)
+      console.log("This is the card list:", newCardList);
 
-      let parsedNewCard = JSON.parse(newCard)
-      let parsedCardList = this.state.cardList.push(parsedNewCard)
-      this.setState({cardList: parsedCardList})
-      
-      console.log("Parsed card array:", parsedCardList);
+      this.setState({
+        card: {
+          cardTitle: "",
+          cardDescription: "",
+          dateCreated: "",
+          searchTags: []
+        },
+        cardList: newCardList
+      });
+
+      localStorage.setItem(cardTitle, JSON.stringify(newCard));
+
     } else {
       alert("This card name already exists");
     }
-
-    this.setState({
-      card: {
-        cardTitle: "",
-        cardDescription: "",
-        dateCreated: "",
-        searchTags: []
-      }
-    });
 
     console.log("This is outside handleSubmit", this.state.cardList);
   };

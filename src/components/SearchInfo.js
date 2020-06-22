@@ -27,7 +27,7 @@ function SearchInfo(props) {
 
   return (
     <div>
-      <SearchBar handleSearch={props.handleSearch}/>
+      <SearchBar handleSearch={handleSearch}/>
     </div>
   );
 }
