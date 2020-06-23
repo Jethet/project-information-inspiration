@@ -9,6 +9,7 @@ function SearchBar(props) {
         type="search"
         placeholder="Search"
         aria-label="Search"
+        value={props.searchItem}
       />
       <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
         Search

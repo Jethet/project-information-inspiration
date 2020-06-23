@@ -7,6 +7,7 @@ import NewCard from "./components/NewCard";
 function App() {
   return (
     <div>
+      <SearchInfo />
       <NewCard />
     </div>
   );

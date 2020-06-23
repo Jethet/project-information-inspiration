@@ -1,5 +1,4 @@
 import React from "react";
-import SearchInfo from "./SearchInfo"
 
 class NewCard extends React.Component {
   constructor(props) {
@@ -20,52 +19,38 @@ class NewCard extends React.Component {
     this.setState({ [name]: value });
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-
+  handleSubmit = () => {
     const { cardTitle, cardDescription, dateCreated, searchTags } = this.state;
-    console.log(cardTitle);
-
+    
     let nameCheck = localStorage.getItem(cardTitle);
-
-    // set function for unique id to variable and add it to JSON.stringify
-    if (nameCheck === null) {
+    if (nameCheck !== null) {
+      alert("This card name already exists");
+    } else {
+      // set function for unique id to variable and add it to newCard
       let id = Math.random().toString(36).substr(2, 7);
       let newCard = {
-          id,
-          cardTitle,
-          cardDescription,
-          dateCreated,
-          searchTags,
-        };
-      console.log("This is a new card:", newCard);
-      const newCardList = this.state.cardList
-      newCardList.push(newCard)
-      console.log("This is the card list:", newCardList);
-
-      this.setState({
-        card: {
-          cardTitle: "",
-          cardDescription: "",
-          dateCreated: "",
-          searchTags: []
-        },
-        cardList: newCardList
-      });
-
+        id,
+        cardTitle,
+        cardDescription,
+        dateCreated,
+        searchTags,
+      };
       localStorage.setItem(cardTitle, JSON.stringify(newCard));
-
-    } else {
-      alert("This card name already exists");
     }
-
-    console.log("This is outside handleSubmit", this.state.cardList);
+    
+    this.setState({
+      card: {
+        cardTitle: "",
+        cardDescription: "",
+        dateCreated: "",
+        searchTags: [],
+      },
+    });
   };
 
   render() {
     return (
       <div>
-        <SearchInfo cardList={this.state.cardList}/>
         <div className="create-card-container">
           <div id="card-header">
             <h3>Create a new information card</h3>

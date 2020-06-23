@@ -5,23 +5,27 @@ import SearchBar from "./SearchBar"
 // create an array cardList with all information to be
 // filtered and returned
 
-function SearchInfo(props) {
+function SearchInfo() {
 
   function handleSearch(e) {
     e.preventDefault()
 
     let searchItem = e.target[0].value;
-    // console.log(e.target[0].value);
+    let searchItemLower = searchItem.toLowerCase()
+    let searchResult = (localStorage.getItem(searchItem) && localStorage.getItem(searchItemLower))
 
-    let searchResult = localStorage.getItem(searchItem)
-    // console.log(searchResult);
+    console.log("This is searchResult", searchResult);
 
-    if (localStorage.getItem(searchItem) === null) {
+    if (!searchResult) {
       alert("Not found");
     } else {
-      console.log(JSON.parse(searchResult));
+      console.log("This is JSON.parse", JSON.parse(searchResult));
     }
 
+    Object.keys(localStorage).forEach(function(key) {
+      console.log(localStorage.getItem(key));
+      
+    })
     e.target[0].value = ""
   }
 
