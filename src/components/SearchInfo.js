@@ -1,39 +1,46 @@
 import React from "react";
-import SearchBar from "./SearchBar"
+import SearchBar from "./SearchBar";
+import Card from "./Card";
 
-// SEARCH has to be done on all words, lowercase - need to
-// create an array cardList with all information to be
-// filtered and returned
-
-function SearchInfo() {
+function SearchInfo(props) {
+  let searchResult;
 
   function handleSearch(e) {
-    e.preventDefault()
+    e.preventDefault();
 
     let searchItem = e.target[0].value;
-    let searchItemLower = searchItem.toLowerCase()
-    let searchResult = (localStorage.getItem(searchItem) && localStorage.getItem(searchItemLower))
+    let searchItemLower = searchItem.toLowerCase();
 
-    console.log("This is searchResult", searchResult);
+    // searchResult = localStorage.getItem(searchItem) && localStorage.getItem(searchItemLower);
+    console.log(searchItem, searchItemLower);
 
-    if (!searchResult) {
-      alert("Not found");
-    } else {
+    // console.log("This is searchResult", searchResult);
+
+    if (
+      searchResult === localStorage.getItem(searchItem) ||
+      searchResult === localStorage.getItem(searchItemLower)
+    ) {
       console.log("This is JSON.parse", JSON.parse(searchResult));
+    } else {
+      alert("Not found");
     }
+    // Object.keys(localStorage).forEach(function (key) {
+    //   console.log(localStorage.getItem(key));
+    // });
 
-    Object.keys(localStorage).forEach(function(key) {
-      console.log(localStorage.getItem(key));
-      
-    })
-    e.target[0].value = ""
+    e.target[0].value = "";
   }
 
   return (
     <div>
-      <SearchBar handleSearch={handleSearch}/>
+      <SearchBar handleSearch={handleSearch} />
+      {/* <div>
+      {searchResult.map((result) => {
+        return <Card key={result.id} />;
+      })}
+      </div> */}
     </div>
   );
 }
 
-export default SearchInfo
+export default SearchInfo;
