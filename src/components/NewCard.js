@@ -116,7 +116,7 @@ class NewCard extends React.Component {
                 </label>
               </div>
               <button type="submit" className="create-button">
-                Create infocard
+                Create new card
               </button>
             </form>
           </div>

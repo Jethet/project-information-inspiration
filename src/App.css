@@ -108,6 +108,13 @@ body {
 
 /* SEARCH RESULTS */
 
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+
 #search-results-header {
   color: rgb(36, 105, 233);
   display: flex;

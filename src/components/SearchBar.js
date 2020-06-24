@@ -2,16 +2,16 @@ import React from "react"
 
 function SearchBar(props) {
   return(
-    <div>
+    <div className="search-form">
       <form className="form-inline" onSubmit={props.handleSearch}>
       <input
         className="form-control mr-sm-2"
         type="search"
-        placeholder="Search"
+        placeholder="Search word, tag, date"
         aria-label="Search"
         value={props.searchItem}
       />
-      <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+      <button className="create-button" type="submit">
         Search
       </button>
     </form>
