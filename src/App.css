@@ -5,7 +5,7 @@ body {
 }
 
 /* NAVBAR */
-#navbar {
+.navbar {
   display: absolute;
   margin: 0 auto;
   padding: 10px;
@@ -16,21 +16,44 @@ body {
 #home-icon {
   display: flex;
   align-self: start;
+  margin-left: 10px;
+  margin-top: 5px;
 }
 
-#nav-buttons {
+#home-icon:hover {
+  background-color: rgb(50, 119, 248);
+}
+
+.row {
+  margin: 0 10px;
+}
+
+.nav-buttons {
   display: flex;
   justify-content: flex-end;
+  background-color: whitesmoke;
+  color: cornflowerblue;
+  font-size: 14px;
+  padding: 3px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  transition-duration: 0.3s;
 }
 
-.link-button {
+.nav-buttons:hover {
+  background-color: transparent;
+  color: whitesmoke;
+}
+
+/* .link-button {
   display: flex;
   background-color: whitesmoke;
-  color: black;
+  color: cornflowerblue;
   font-size: 12px;
   margin-left: 10px;
   border-radius: 5px;
-}
+} */
 /* CARD */
 .card-container {
   margin: 0 auto;
@@ -65,6 +88,23 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.create-button {
+  display: flex;
+  justify-content: center;
+  background-color: cornflowerblue;
+  color: whitesmoke;
+  font-size: 14px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  transition-duration: 0.3s;
+}
+
+.create-button:hover {
+  background-color: rgb(50, 119, 248);
+}
+
 
 /* SEARCH RESULTS */
 
