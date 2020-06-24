@@ -7,7 +7,7 @@ function Navbar() {
       <nav className="navbar">
         <div id="home-icon">
           <Link to="/">
-            <img src="/images/homelink-white.png" width="25" height="25" alt="Home" />
+            <img src="/images/homelink-white.png" width="40" height="40" alt="Home" />
           </Link>
         </div>
 
