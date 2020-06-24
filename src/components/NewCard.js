@@ -37,7 +37,7 @@ class NewCard extends React.Component {
       };
       localStorage.setItem(cardTitle, JSON.stringify(newCard));
     }
-    
+
     this.setState({
       card: {
         cardTitle: "",
@@ -115,8 +115,8 @@ class NewCard extends React.Component {
                   />
                 </label>
               </div>
-              <button type="submit" className="btn btn-outline-success my-2 my-sm-0">
-                Create Card
+              <button type="submit" className="create-button">
+                Create infocard
               </button>
             </form>
           </div>
