@@ -37,10 +37,12 @@ function SearchInfo() {
       <SearchBar handleSearch={handleSearch} />
       <div>
       <p>This is the result: </p>
+      <ul style={{ listStyle: "none" }}>
         {searchResultList.map((result) => {
           return <p>{result}</p>
           {/* <Card key={result.id} data={result} />; */}
         })}
+        </ul>
       </div>
     </div>
   );
