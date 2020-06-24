@@ -139,3 +139,12 @@ body {
 .search-card-title {
   color: rgb(36, 105, 233);
 }
+
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}

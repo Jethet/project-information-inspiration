@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar"
 import StartPage from "./components/StartPage";
 import SearchInfo from "./components/SearchInfo";
 import NewCard from "./components/NewCard";
+import Footer from "./components/Footer"
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route exact path="/create" component={NewCard} />
         <Route exact path="/search" component={SearchInfo} />
       </Switch>
+
+      <Footer />
     </div>
   );
 }

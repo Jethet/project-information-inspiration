@@ -38,7 +38,8 @@ function SearchInfo() {
 
       <div>
       {/* should I put this in a function, above? do the map there, assign
-      it to a variable and put that in here in Card format??*/}
+      it to a variable and put that in here in Card format??
+      OR put this as a presentation component?*/}
         <p>This is the result: </p>
         <ul style={{ listStyle: "none" }}>
           {searchResultList.map((item, index) => {
