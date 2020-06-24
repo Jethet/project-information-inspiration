@@ -35,13 +35,18 @@ function SearchInfo() {
   return (
     <div>
       <SearchBar handleSearch={handleSearch} />
+
       <div>
-      <p>This is the result: </p>
-      <ul style={{ listStyle: "none" }}>
-        {searchResultList.map((result) => {
-          return <p>{result}</p>
-          {/* <Card key={result.id} data={result} />; */}
-        })}
+      {/* should I put this in a function, above? do the map there, assign
+      it to a variable and put that in here in Card format??*/}
+        <p>This is the result: </p>
+        <ul style={{ listStyle: "none" }}>
+          {searchResultList.map((item, index) => {
+            return <li key={index}>{item}</li>;
+            {
+              /* <Card key={result.id} data={result} />; */
+            }
+          })}
         </ul>
       </div>
     </div>
