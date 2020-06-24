@@ -36,9 +36,11 @@ function SearchInfo() {
     <div>
       <SearchBar handleSearch={handleSearch} />
       <div>
-        {searchResultList.map((result) => {
-          return <Card key={result.id} data={result} />;
-        })}
+      <p>This is the result: {searchResultList}</p>
+        {/* {searchResultList.map((result) => {
+          return 
+          <Card key={result.id} data={result} />;
+        })} */}
       </div>
     </div>
   );
