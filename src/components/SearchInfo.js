@@ -37,18 +37,13 @@ function SearchInfo() {
       <SearchBar handleSearch={handleSearch} />
 
       <div>
-      {/* should I put this in a function, above? do the map there, assign
-      it to a variable and put that in here in Card format??
-      OR put this as a presentation component?*/}
-        <p>This is the result: </p>
-        <ul style={{ listStyle: "none" }}>
+     
+        <p>This is the result: {searchResultList} </p>
+        {/* <ul style={{ listStyle: "none" }}>
           {searchResultList.map((item, index) => {
             return <li key={index}>{item}</li>;
-            {
-              /* <Card key={result.id} data={result} />; */
-            }
           })}
-        </ul>
+        </ul> */}
       </div>
     </div>
   );
