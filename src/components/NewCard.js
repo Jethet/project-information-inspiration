@@ -35,7 +35,7 @@ class NewCard extends React.Component {
         dateCreated,
         searchTags,
       };
-      localStorage.setItem(cardTitle, JSON.stringify(newCard));
+      localStorage.setItem(cardTitle.toLowerCase(), JSON.stringify(newCard));
     }
 
     this.setState({

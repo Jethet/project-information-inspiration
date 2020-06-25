@@ -1,15 +1,15 @@
 import React from "react";
+import Card from "./Card"
 
 function SearchResult(props) {
   return (
     <div>
       <div>
-        {/* <p>This is the result: {props.searchResultList} </p>
-        {/* <ul style={{ listStyle: "none" }}>
-          {searchResultList.map((item, index) => {
-            return <li key={index}>{item}</li>;
+        <ul style={{ listStyle: "none" }}>
+          {props.searchResultList.map((item, index) => {
+            return <Card key={index} data={item} />
           })}
-        </ul> */} */}
+        </ul>
       </div>
     </div>
   );

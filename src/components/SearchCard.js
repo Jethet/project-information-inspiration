@@ -1,55 +1,52 @@
 import React from "react";
 import SearchBar from "./SearchBar";
+import SearchResult from "./SearchResult"
 import Card from "./Card";
 
-function SearchCard() {
-  let searchResult;
-  let searchResultList = [];
+class SearchCard extends React.Component {
+  state = {
+    searchResultList: [],
+  };
 
-  function handleSearch(e) {
+  handleSearch = (e) => {
     e.preventDefault();
 
-    let searchItem = e.target[0].value;
-    let searchItemLower = searchItem.toLowerCase();
+    let searchItem = e.target[0].value.toLowerCase();
     // let searchItemUpper = searchItem[0].toUpperCase() + searchItem[1, -1]
-    console.log(searchItem, searchItemLower);
+    console.log(searchItem);
 
+    let searchResult = "";
     if (localStorage.getItem(searchItem) !== null) {
       searchResult = localStorage.getItem(searchItem);
       console.log(searchResult);
-    } else if (localStorage.getItem(searchItemLower) !== null) {
-      searchResult = localStorage.getItem(searchItemLower);
     } else if (localStorage.getItem(searchItem) === null) {
       alert("Not found");
-    } else if (localStorage.getItem(searchItemLower) === null) {
-      alert("Not found");
+      e.target[0].value = "";
+      return
     } else {
-      alert("Something went wrong")
+      alert("Something went wrong");
     }
 
-
-    let parsedSearchResult = JSON.parse(searchResult)
+    let parsedSearchResult = JSON.parse(searchResult);
     console.log("This is searchResult JSON.parse", parsedSearchResult);
 
-    searchResultList.push(parsedSearchResult);
-    console.log("This is list of results:", searchResultList);
+    let newSearchResultList = [];
+    newSearchResultList.push(parsedSearchResult);
+    this.setState({ searchResultList: newSearchResultList });
+
+    console.log("This is list of results:", newSearchResultList);
 
     e.target[0].value = "";
-  }
+  };
 
-  // console.log(searchResultList)
-
-  return (
-    <div>
-      <SearchBar handleSearch={handleSearch} />
-
+  render() {
+    return (
       <div>
-     
-        <p>This is the result: {this.searchResultList} </p>
-        
+        <SearchBar handleSearch={this.handleSearch} />
+        <SearchResult searchResultList={this.state.searchResultList} />
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default SearchCard;
