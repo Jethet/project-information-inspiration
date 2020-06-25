@@ -19,11 +19,16 @@ function SearchCard() {
       console.log(searchResult);
     } else if (localStorage.getItem(searchItemLower) !== null) {
       searchResult = localStorage.getItem(searchItemLower);
-    } else {
+    } else if (localStorage.getItem(searchItem) === null) {
       alert("Not found");
+    } else if (localStorage.getItem(searchItemLower) === null) {
+      alert("Not found");
+    } else {
+      alert("Something went wrong")
     }
 
-    let parsedSearchResult = JSON.parse(searchResult);
+
+    let parsedSearchResult = JSON.parse(searchResult)
     console.log("This is searchResult JSON.parse", parsedSearchResult);
 
     searchResultList.push(parsedSearchResult);
@@ -32,20 +37,16 @@ function SearchCard() {
     e.target[0].value = "";
   }
 
-  console.log(searchResultList)
+  // console.log(searchResultList)
 
   return (
     <div>
-      <SearchBar handleSearch={handleSearch} searchResultList={searchResultList} />
+      <SearchBar handleSearch={handleSearch} />
 
       <div>
      
-        <p>This is the result: {searchResultList} </p>
-        {/* <ul style={{ listStyle: "none" }}>
-          {searchResultList.map((item, index) => {
-            return <li key={index}>{item}</li>;
-          })}
-        </ul> */}
+        <p>This is the result: {this.searchResultList} </p>
+        
       </div>
     </div>
   );
