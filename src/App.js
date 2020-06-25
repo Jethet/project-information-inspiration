@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar"
 import StartPage from "./components/StartPage";
-import SearchInfo from "./components/SearchInfo";
+import SearchCard from "./components/SearchCard";
 import NewCard from "./components/NewCard";
 import Footer from "./components/Footer"
 
@@ -16,7 +16,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={StartPage} />
         <Route exact path="/create" component={NewCard} />
-        <Route exact path="/search" component={SearchInfo} />
+        <Route exact path="/search" component={SearchCard} />
       </Switch>
 
       <Footer />

@@ -2,7 +2,7 @@ import React from "react";
 import SearchBar from "./SearchBar";
 import Card from "./Card";
 
-function SearchInfo() {
+function SearchCard() {
   let searchResult;
   let searchResultList = [];
 
@@ -32,26 +32,23 @@ function SearchInfo() {
     e.target[0].value = "";
   }
 
+  console.log(searchResultList)
+
   return (
     <div>
-      <SearchBar handleSearch={handleSearch} />
+      <SearchBar handleSearch={handleSearch} searchResultList={searchResultList} />
 
       <div>
-      {/* should I put this in a function, above? do the map there, assign
-      it to a variable and put that in here in Card format??
-      OR put this as a presentation component?*/}
-        <p>This is the result: </p>
-        <ul style={{ listStyle: "none" }}>
+     
+        <p>This is the result: {searchResultList} </p>
+        {/* <ul style={{ listStyle: "none" }}>
           {searchResultList.map((item, index) => {
             return <li key={index}>{item}</li>;
-            {
-              /* <Card key={result.id} data={result} />; */
-            }
           })}
-        </ul>
+        </ul> */}
       </div>
     </div>
   );
 }
 
-export default SearchInfo;
+export default SearchCard;
