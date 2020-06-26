@@ -1,15 +1,18 @@
-import React from "react"
+import React from "react";
 
 function StartPage() {
-
   return (
-    <div>
-    <div>This is the start page.</div>
-    <p>The idea is to have an overview of cards here.</p>
-    <p>The last three created, for example.</p>
-    <p>Or the cards of the last search maybe.</p>
+    <div className="start-page-container">
+      <article className="start-page-article">
+        <h2 className="start-page-header">
+          Welcome to the Information for your Inspiration app
+        </h2>
+        <p>
+          Find the info you have saved and be inspired by what shows up.
+        </p>
+      </article>
     </div>
-  )
+  );
 }
 
-export default StartPage
+export default StartPage;

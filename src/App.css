@@ -46,6 +46,20 @@ body {
   color: whitesmoke;
 }
 
+/* START PAGE */
+.start-page-container {
+  margin: 0 auto;
+}
+
+.start-page-article {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 /* .link-button {
   display: flex;
   background-color: whitesmoke;
