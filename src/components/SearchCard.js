@@ -10,9 +10,9 @@ class SearchCard extends React.Component {
 
   handleSearch = (e) => {
     e.preventDefault();
-
+    // Set the search value to lowercase: card names are saved in local
+    // storage with lowercase to avoid search problems with upper/lower
     let searchItem = e.target[0].value.toLowerCase();
-    // let searchItemUpper = searchItem[0].toUpperCase() + searchItem[1, -1]
     console.log(searchItem);
 
     let searchResult = "";
@@ -28,8 +28,6 @@ class SearchCard extends React.Component {
     }
 
     let parsedSearchResult = JSON.parse(searchResult);
-    console.log("This is searchResult JSON.parse", parsedSearchResult);
-
     let newSearchResultList = [];
     newSearchResultList.push(parsedSearchResult);
     this.setState({ searchResultList: newSearchResultList });

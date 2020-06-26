@@ -35,6 +35,8 @@ class NewCard extends React.Component {
         dateCreated,
         searchTags,
       };
+      // When adding to local storage, make title lowercase for search (the
+      // search value is also set to lowercase in SearchCard.js)
       localStorage.setItem(cardTitle.toLowerCase(), JSON.stringify(newCard));
     }
 

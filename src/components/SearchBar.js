@@ -14,8 +14,8 @@ function SearchBar(props) {
       <button className="create-button" type="submit">
         Search
       </button>
+      
     </form>
-    
     </div>
   )
 }
