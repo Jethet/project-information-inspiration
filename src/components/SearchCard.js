@@ -1,6 +1,6 @@
 import React from "react";
 import SearchBar from "./SearchBar";
-import SearchResult from "./SearchResult"
+import SearchResult from "./SearchResult";
 import Card from "./Card";
 
 class SearchCard extends React.Component {
@@ -16,15 +16,17 @@ class SearchCard extends React.Component {
     console.log(searchItem);
 
     let searchResult = "";
-    if (localStorage.getItem(searchItem) !== null) {
-      searchResult = localStorage.getItem(searchItem);
-      console.log(searchResult);
-    } else if (localStorage.getItem(searchItem) === null) {
-      alert("Not found");
-      e.target[0].value = "";
-      return
-    } else {
-      alert("Something went wrong");
+    for (let i = 0; i < localStorage.length; i++) {
+      if (localStorage.getItem(searchItem) !== null) {
+        searchResult = localStorage.getItem(searchItem);
+        console.log(searchResult);
+      } else if (localStorage.getItem(searchItem) === null) {
+        alert("Not found");
+        e.target[0].value = "";
+        return;
+      } else {
+        alert("Something went wrong");
+      }
     }
 
     let parsedSearchResult = JSON.parse(searchResult);

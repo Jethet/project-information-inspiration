@@ -49,6 +49,21 @@ body {
 /* START PAGE */
 .start-page-container {
   margin: 0 auto;
+  height: 100vh;
+  background: url("/images/startpage_background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: auto;
+  background-size: 100% 100%;
+  overflow-x: hidden;
+  overflow-x: auto;
+  background-attachment: fixed;
+}
+
+.start-page-text {
+  max-width: 90%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .start-page-article {
@@ -56,7 +71,11 @@ body {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 20%;
+  max-width: 50%;
+}
+
+.start-page-header {
   margin-bottom: 20px;
 }
 
