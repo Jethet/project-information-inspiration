@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 function Footer() {
   return (
     <div className="footer">
-      <footer>Credits for pictures and fonts used - HH@2020</footer>
+      <footer><Link to="/credits">Credits for pictures and fonts used</Link> - HH@2020</footer>
     </div>
   );
 }
