@@ -11,7 +11,6 @@ body {
   margin: 0 auto;
   padding: 10px;
   background-color: rgb(65, 62, 62);
-  color: whitesmoke;
 }
 
 #home-icon {
@@ -42,7 +41,7 @@ body {
 }
 
 .nav-buttons:hover {
-  background-color: transparent;
+  background-color: lightgray;
   color: whitesmoke;
 }
 
@@ -125,7 +124,7 @@ body {
 .create-button {
   display: flex;
   justify-content: center;
-  background-color: cornflowerblue;
+  background-color: rgb(65, 62, 62);
   color: whitesmoke;
   font-size: 14px;
   padding: 10px;
@@ -135,7 +134,7 @@ body {
 }
 
 .create-button:hover {
-  background-color: rgb(50, 119, 248);
+  background-color: lightgray;
 }
 
 /* SEARCH RESULTS */
@@ -161,7 +160,7 @@ body {
 }
 
 .close-cards-button {
-  background-color: cornflowerblue;
+  background-color: rgb(65, 62, 62);
   color: whitesmoke;
   font-size: 14px;
   padding: 10px;
@@ -171,7 +170,7 @@ body {
 }
 
 .close-cards-button:hover {
-  background-color: rgb(50, 119, 248);
+  background-color: lightgray;
 }
 
 /* #search-results-header {
@@ -210,5 +209,5 @@ body {
   width: 100%;
   height: 25px;
   font-size: 10px;
-  color: cornflowerblue;
+  color: rgb(65, 62, 62);
 }

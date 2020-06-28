@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+
+  const myStyle = {
+      color: "rgb(65, 62, 62)",
+  }
+
   return (
     <div>
       <nav className="navbar">
@@ -13,10 +18,10 @@ function Navbar() {
 
         <div className="row">
           <button className="nav-buttons">
-            <Link to="/create" className="nav-link">Create infocard</Link>
+            <Link to="/create" className="nav-link" style={myStyle}>Create infocard</Link>
           </button>
           <button className="nav-buttons">
-            <Link to="/search" className="nav-link">Search infocard</Link>
+            <Link to="/search" className="nav-link" style={myStyle}>Search infocard</Link>
           </button>
         </div>
 
