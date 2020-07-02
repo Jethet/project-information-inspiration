@@ -52,10 +52,10 @@ class NewCard extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="create-card-page">
         <div className="create-card-container">
           <div id="card-header">
-            <h3>Create a new information card</h3>
+            <h1>Create a new information card</h1>
           </div>
           <div className="card-form">
             <form onSubmit={this.handleSubmit}>
