@@ -2,10 +2,20 @@ import React from "react";
 
 function Credits() {
   return (
-    <div>
-      <p>The home icon used in the navbar was created by Freepik, designer.</p>
-      <p>The background picture on the start page is from Pixabay (https://www.pexels.com/@pixabay)</p>
-      <p>The font used in this app is</p>
+    <div className="credits-container">
+      <div className="credits-text">
+        <h3>Acknowledgements for everything that was made available for free:</h3>
+        <ul className="credits-list">
+          <li>Home icon: Freepik, designer.</li>
+          <li>Font:</li>
+        </ul>
+        <ul className="credits-list">
+          <p>Photographs:</p>
+          <li>Linda Eller-Shein: https://www.pexels.com/@linda-eller-shein-605670</li>
+          <li>FWStudio: https://www.pexels.com/@fwstudio-33348</li>
+          <li>Pixabay: https://www.pexels.com/@pixabay</li>
+        </ul>
+      </div>
     </div>
   );
 }
