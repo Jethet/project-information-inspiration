@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Footer() {
 
   const myStyle = {
-    color: "rgb(65, 62, 62)",
+    color: "rgb(3, 85, 31)",
 }
   return (
     <div className="footer">

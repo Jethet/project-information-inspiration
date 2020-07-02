@@ -11,7 +11,7 @@ function SearchBar(props) {
         aria-label="Search"
         value={props.searchItem}
       />
-      <button className="create-button" type="submit">
+      <button className="search-button" type="submit">
         Search
       </button>
       
