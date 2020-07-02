@@ -1,7 +1,6 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import SearchResult from "./SearchResult";
-import Card from "./Card";
 
 class SearchCard extends React.Component {
   state = {
@@ -14,6 +13,7 @@ class SearchCard extends React.Component {
     // storage with lowercase to avoid search problems with upper/lower
     let searchItem = e.target[0].value.toLowerCase();
     console.log(searchItem);
+    e.target[0].value = "";
 
     let searchResult = "";
     for (let i = 0; i < localStorage.length; i++) {
@@ -30,13 +30,18 @@ class SearchCard extends React.Component {
     }
 
     let parsedSearchResult = JSON.parse(searchResult);
-    let newSearchResultList = [];
+    
+    let newSearchResultList = [...this.state.searchResultList];
+    console.log("This is newSearchResultList before push:", newSearchResultList);
+
     newSearchResultList.push(parsedSearchResult);
+    console.log("This is newSearchResultList after push:", newSearchResultList);
+
     this.setState({ searchResultList: newSearchResultList });
 
     console.log("This is list of results:", newSearchResultList);
+    console.log("This is the this.state.searchResultList", this.state.searchResultList);
 
-    e.target[0].value = "";
   };
 
   render() {

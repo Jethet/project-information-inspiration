@@ -109,6 +109,7 @@ body {
 /* CARD */
 .card-container {
   margin: 0 auto;
+ 
   /* border: 2px solid red; */
 }
 
@@ -202,6 +203,10 @@ body {
   background-color: rgb(1, 51, 12);
 }
 
+.search-result-container {
+  
+}
+
 .close-cards {
   /* display: flex;
   flex-direction: column;
@@ -229,31 +234,7 @@ body {
   background-color: rgb(1, 51, 12);
 }
 
-/* #search-results-header {
-  color: rgb(36, 105, 233);
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
 
-.search-card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.search-card {
-  max-width: 200px;
-  margin: 5px;
-  padding: 10px;
-  border: 1px solid rgb(36, 105, 233);
-  border-radius: 10px;
-}
-
-.search-card-title {
-  color: rgb(36, 105, 233);
-} */
 
 /* CREDITS */
 .credits-container {
