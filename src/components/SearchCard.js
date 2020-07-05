@@ -46,7 +46,7 @@ class SearchCard extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="search-results-overview">
         <SearchBar handleSearch={this.handleSearch} />
         <SearchResult searchResultList={this.state.searchResultList} />
       </div>
