@@ -3,14 +3,17 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 
 /* NAVBAR */
 .navbar {
-  display: absolute;
+  /* display: absolute; */
+  position: fixed;
+  top: 0;
+  width: 100%;
   margin: 0 auto;
   padding: 10px;
-  /* background-color: rgb(65, 62, 62); */
   background-color: rgb(3, 85, 31);
 }
 
@@ -67,15 +70,17 @@ body {
   background-repeat: no-repeat;
   width: auto;
   background-size: 100% 100%;
-  overflow-x: hidden;
-  overflow-x: auto;
+  overflow: auto;
   background-attachment: fixed;
+  margin-top: 20px;
 }
 
 .start-page-text {
+  margin: 0 auto;
   max-width: 90%;
   display: flex;
   justify-content: center;
+  margin-top: 10%;
 }
 
 .start-page-article {
@@ -88,11 +93,9 @@ body {
 }
 
 .start-page-header {
-  margin-bottom: 20px;
   color: rgb(3, 85, 31);
+  margin-bottom: 20px;
   font-weight: bolder;
-  font-size: 50px;
-  margin-bottom: 50px;
 }
 
 .start-page-subheader {
@@ -102,8 +105,7 @@ body {
 /* CARD */
 .card-container {
   margin: 0 auto;
-
-  /* border: 2px solid red; */
+  border: 2px solid rgb(1, 51, 12);
 }
 
 .card {
@@ -120,15 +122,15 @@ body {
   background-repeat: no-repeat;
   width: auto;
   background-size: 100% 100%;
-  overflow-x: hidden;
-  overflow-x: auto;
+  overflow: hidden;
   background-attachment: fixed;
+  position: absolute;
 }
 
 .create-card-container {
   display: flex;
   flex-direction: column;
-  margin-top: 5%;
+  margin-top: 20%;
   color: rgb(3, 85, 31);
   font-weight: bolder;
 }
@@ -136,6 +138,8 @@ body {
 #card-header {
   display: flex;
   justify-content: center;
+  margin: 0 auto;
+  max-width: 90%;
   font-weight: 900;
 }
 
@@ -168,6 +172,8 @@ body {
   background-color: rgb(1, 51, 12);
 }
 
+/* SEARCH BAR */
+
 /* SEARCH RESULTS */
 .search-results-overview {
   margin: 0 auto;
@@ -175,18 +181,26 @@ body {
   width: auto;
   background: url("/images/search-background.jpg");
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
-  overflow-x: hidden;
-  overflow-x: auto;
+  overflow: auto;
   background-attachment: fixed;
+}
+
+.search-header {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 20%;
+  color: rgb(3, 85, 31);
+  font-weight: bolder;
 }
 
 .search-form {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  margin-top: 80px;
+  margin-top: 10px;
 }
 
 .search-button {
@@ -246,8 +260,7 @@ body {
   background-repeat: no-repeat;
   width: auto;
   background-size: 100% 100%;
-  overflow-x: hidden;
-  overflow-x: auto;
+  overflow: auto;
   background-attachment: fixed;
 }
 

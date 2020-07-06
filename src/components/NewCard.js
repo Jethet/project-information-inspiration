@@ -55,7 +55,7 @@ class NewCard extends React.Component {
       <div className="create-card-page">
         <div className="create-card-container">
           <div id="card-header">
-            <h1>Create a new information card</h1>
+            <h1>Create a new card</h1>
           </div>
           <div className="card-form">
             <form onSubmit={this.handleSubmit}>

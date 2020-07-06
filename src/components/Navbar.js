@@ -18,10 +18,10 @@ function Navbar() {
 
         <div className="row">
           <button className="nav-buttons">
-            <Link to="/create" className="nav-link" style={myStyle}>Create infocard</Link>
+            <Link to="/create" className="nav-link" style={myStyle}>Create</Link>
           </button>
           <button className="nav-buttons">
-            <Link to="/search" className="nav-link" style={myStyle}>Search infocard</Link>
+            <Link to="/search" className="nav-link" style={myStyle}>Search</Link>
           </button>
         </div>
 
