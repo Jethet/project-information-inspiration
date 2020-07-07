@@ -26,35 +26,44 @@ class SearchCard extends React.Component {
     // storage with lowercase to avoid search problems with upper/lower
     let searchItem = e.target[0].value.toLowerCase();
     e.target[0].value = "";
+    this.cardTitleToLowerCase(searchItem);
+  };
 
-    let searchResult = "";
+  cardTitleToLowerCase = (searchItem) => {
     let storageObjects = this.state.allStorageObjects;
     let storageStrings = storageObjects.map((item) => {
       return item.cardTitle.toLowerCase();
     });
+    this.getSearchResults(searchItem, storageStrings);
+  };
 
-    const foundItem = storageStrings
-      .filter((item) => item.includes(searchItem))
-      .map((item) => {
-        return item;
+  getSearchResults = (searchItem, storageStrings) => {
+    let searchResult = "";
+
+    for (let i = 0; i < storageStrings.length; i++) {
+      const foundItem = storageStrings.find((item) => {
+        return item.includes(searchItem);
       });
-        if (foundItem) {
-          searchResult = localStorage.getItem(foundItem);
-        } else {
-          alert("Not found");
-          return;
-        }
-     
-
+      if (foundItem) {
+        searchResult = localStorage.getItem(foundItem);
+      } else {
+        alert("Not found");
+        return;
+      }
+    }
+    this.parseSearchResults(searchResult)
     console.log("searchResult", searchResult);
+  };
 
+  parseSearchResults = (searchResult) => {
     let parsedSearchResult = JSON.parse(searchResult);
-
     let newSearchResultList = [...this.state.searchResultList];
     newSearchResultList.push(parsedSearchResult);
-    this.setState({ searchResultList: newSearchResultList }, () =>
-      console.log(this.state.searchResultList)
-    );
+    console.log(newSearchResultList);
+    
+    this.setState({ searchResultList: newSearchResultList }, () => {
+      console.log("this.state.searchResultList:", this.state.searchResultList)
+    });
   };
 
   render() {
