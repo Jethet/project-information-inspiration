@@ -1,6 +1,7 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import SearchResult from "./SearchResult";
+import DeleteCard from "./DeleteCard"
 
 class SearchCard extends React.Component {
   state = {
@@ -71,6 +72,7 @@ class SearchCard extends React.Component {
       <div className="search-results-overview">
         <SearchBar handleSearch={this.handleSearch} />
         <SearchResult searchResultList={this.state.searchResultList} />
+        <DeleteCard handleSearch={this.handleSearch} />
       </div>
     );
   }

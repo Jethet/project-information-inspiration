@@ -2,17 +2,20 @@ import React from "react";
 import Card from "./Card";
 
 function SearchResult(props) {
+
+  function handleClick() {
+    window.location.reload()
+  }
+  
   return (
     <div>
       <div className="search-result-container">
-        {/* <ul style={{ listStyle: "none" }}> */}
           {props.searchResultList.map((item, index) => {
             return <Card key={index} data={item} />;
           })}
-        {/* </ul> */}
       </div>
       <div className="close-cards">
-        <button className="close-cards-button" type="submit">
+        <button className="close-cards-button" type="reset" value="Reset" onClick={handleClick}>
           Close all
         </button>
       </div>
