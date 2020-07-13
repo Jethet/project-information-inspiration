@@ -12,8 +12,16 @@ function Card(props) {
           <p className="card-text">
             <small className="text-muted">{props.data.dateCreated}</small>
           </p>
+           {/* <button
+            className="edit-card-button"
+            type="reset"
+            value="Reset"
+            onClick={props.handleEdit}
+          >
+            Edit card
+          </button>
           {/* <button
-            className="delete-cards-button"
+            className="delete-card-button"
             type="reset"
             value="Reset"
             onClick={props.handleDelete}
