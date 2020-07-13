@@ -8,7 +8,7 @@ function CardForm(props) {
           <h1>Create a new card</h1>
         </div>
         <div className="card-form">
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={props.handleSubmit}>
             <div className="form-group">
               <label htmlFor="cardTitle">
                 Card title:
@@ -19,8 +19,8 @@ function CardForm(props) {
                   // required
                   autoComplete="off"
                   name="cardTitle"
-                  value={this.state.cardTitle || ""}
-                  onChange={this.handleChange}
+                  value={props.cardTitle || ""}
+                  onChange={props.handleChange}
                 />
               </label>
             </div>
@@ -34,8 +34,8 @@ function CardForm(props) {
                   // required
                   autoComplete="off"
                   name="cardDescription"
-                  value={this.state.cardDescription || ""}
-                  onChange={this.handleChange}
+                  value={props.cardDescription || ""}
+                  onChange={props.handleChange}
                 />
               </label>
             </div>
@@ -49,8 +49,8 @@ function CardForm(props) {
                   // required
                   autoComplete="off"
                   name="searchTags"
-                  value={this.state.searchTags || ""}
-                  onChange={this.handleChange}
+                  value={props.searchTags || ""}
+                  onChange={props.handleChange}
                 />
               </label>
             </div>
@@ -62,8 +62,8 @@ function CardForm(props) {
                   type="date"
                   name="dateCreated"
                   // required
-                  value={this.state.dateCreated || ""}
-                  onChange={this.handleChange}
+                  value={props.dateCreated || ""}
+                  onChange={props.handleChange}
                 />
               </label>
             </div>
@@ -76,3 +76,5 @@ function CardForm(props) {
     </div>
   );
 }
+
+export default CardForm;

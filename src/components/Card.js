@@ -2,6 +2,8 @@ import React from "react";
 
 function Card(props) {
 
+  // console.log("This is card props.data", props.data);  ?????
+
   return (
     <div className="card-container">
       <div className="card">
