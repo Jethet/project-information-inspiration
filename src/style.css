@@ -105,12 +105,12 @@ body {
 /* CARD */
 .card-container {
   margin: 0 auto;
-  border: 2px solid rgb(1, 51, 12);
+  /* border: 2px solid rgb(1, 51, 12); */
 }
 
 .card {
   width: 30%;
-  margin: 10px;
+  margin: 20px;
 }
 
 /* CREATE CARD */

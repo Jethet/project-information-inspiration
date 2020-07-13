@@ -1,7 +1,7 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import SearchResult from "./SearchResult";
-import DeleteCard from "./DeleteCard"
+import DeleteCard from "./DeleteCard";
 
 class SearchCard extends React.Component {
   state = {
@@ -52,7 +52,7 @@ class SearchCard extends React.Component {
         return;
       }
     }
-    this.parseSearchResults(searchResult)
+    this.parseSearchResults(searchResult);
     console.log("searchResult", searchResult);
   };
 
@@ -61,18 +61,24 @@ class SearchCard extends React.Component {
     let newSearchResultList = [...this.state.searchResultList];
     newSearchResultList.push(parsedSearchResult);
     console.log(newSearchResultList);
-    
+
     this.setState({ searchResultList: newSearchResultList }, () => {
-      console.log("this.state.searchResultList:", this.state.searchResultList)
+      console.log("this.state.searchResultList:", this.state.searchResultList);
     });
+  };
+
+  handleClick = () => {
+    this.setState({ searchResultList: [] });
   };
 
   render() {
     return (
       <div className="search-results-overview">
         <SearchBar handleSearch={this.handleSearch} />
-        <SearchResult searchResultList={this.state.searchResultList} />
-        <DeleteCard handleSearch={this.handleSearch} />
+        <SearchResult
+          searchResultList={this.state.searchResultList}
+          handleClick={this.handleClick}
+        />
       </div>
     );
   }
