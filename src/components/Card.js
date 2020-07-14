@@ -1,39 +1,50 @@
 import React from "react";
+import CardBody from "./CardBody"
 
-function Card(props) {
+class Card extends React.Component {
+  state = {
+    card: {
+      cardTitle: "",
+      cardDescription: "",
+      dateCreated: "",
+      searchTags: [],
+      isEdited: false,
+    },
+  };
 
-  // console.log("This is card props.data", props.data);  ?????
+  handleClick = (e) => {
+    console.log('This will be edited', e.target.value);  
+  }
 
-  return (
-    <div className="card-container">
-      <div className="card">
-        <div className="card-body">
-          <h5 className="card-title">{props.data.cardTitle}</h5>
-          <p className="card-text">{props.data.cardDescription}</p>
-          <p className="card-tags">{props.data.searchTags}</p>
-          <p className="card-text">
-            <small className="text-muted">{props.data.dateCreated}</small>
-          </p>
-           {/* <button
-            className="edit-card-button"
-            type="reset"
-            value="Reset"
-            onClick={props.handleEdit}
-          >
-            Edit card
-          </button>
-          {/* <button
-            className="delete-card-button"
-            type="reset"
-            value="Reset"
-            onClick={props.handleDelete}
-          >
-            Delete card
-          </button> */}
-        </div>
+  handleEdit = (id, e) => {
+    // const { cardTitle, cardDescription, dateCreated, searchTags } = this.state;
+    const { card } = this.state;
+
+    if (id === card.id && isEdited) {
+      const editedCard = {
+        ...card,
+        [name]: e.target.value,
+      };
+      this.setState({ card: editedCard });
+    }
+  };
+
+  render() {
+    console.log("EDit card");
+    
+    return (
+      <div>
+        <CardBody
+          // cardTitle={this.state.cardTitle}
+          // cardDescription={this.state.cardDescription}
+          // dateCreated={this.state.dateCreated}
+          // searchTags={this.state.searchTags}
+          handleClick={this.handleClick}
+          // handleSubmit={this.handleSubmit}
+        />
       </div>
-    </div>
-  );
+    );
+  }
 }
 
-export default Card;
+export default Card

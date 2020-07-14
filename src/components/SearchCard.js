@@ -18,7 +18,6 @@ class SearchCard extends React.Component {
       allStorage.push(JSON.parse(storageValues));
     }
     this.setState({ allStorageObjects: allStorage });
-    console.log("The values list from componentDidMount:", allStorage);
   }
 
   handleSearch = (e) => {
@@ -60,7 +59,6 @@ class SearchCard extends React.Component {
     let parsedSearchResult = JSON.parse(searchResult);
     let newSearchResultList = [...this.state.searchResultList];
     newSearchResultList.push(parsedSearchResult);
-    console.log(newSearchResultList);
 
     this.setState({ searchResultList: newSearchResultList }, () => {
       console.log("this.state.searchResultList:", this.state.searchResultList);

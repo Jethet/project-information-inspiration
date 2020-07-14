@@ -51,6 +51,7 @@ class NewCard extends React.Component {
     });
   };
 
+
   render() {
     return (
       <div>
