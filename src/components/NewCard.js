@@ -55,7 +55,10 @@ class NewCard extends React.Component {
     return (
       <div>
         <CardForm
-          data={this.state.card}
+          cardTitle={this.state.cardTitle}
+          cardDescription={this.state.cardDescription}
+          dateCreated={this.state.dateCreated}
+          searchTags={this.state.searchTags}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
