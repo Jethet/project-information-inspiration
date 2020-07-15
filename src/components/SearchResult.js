@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./CardBody";
+import CardBody from "./CardBody";
 
 function SearchResult(props) {
   
@@ -7,7 +7,7 @@ function SearchResult(props) {
     <div>
       <div className="search-result-container">
         {props.searchResultList.map((item, index) => {
-          return <Card key={index} data={item} />;
+          return <CardBody key={index} data={item} />;
         })}
       </div>
       <div className="close-cards">
