@@ -11,7 +11,7 @@ function Footer() {
         <Link to="/credits" style={myStyle}>
           Credits for pictures and fonts used
         </Link>
-        {/* <p>Built by HH@2020</p> */}
+        <p>Built by HH@2020</p>
       </footer>
     </div>
   );

@@ -1,7 +1,6 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import SearchResult from "./SearchResult";
-import DeleteCard from "./DeleteCard";
 
 class SearchCard extends React.Component {
   state = {
