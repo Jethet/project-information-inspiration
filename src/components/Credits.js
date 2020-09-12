@@ -7,7 +7,6 @@ function Credits() {
         <h3>Acknowledgements for everything that was made available for free:</h3>
         <ul className="credits-list">
           <li>Home icon: Freepik, designer.</li>
-          <li>Font:</li>
         </ul>
         <ul className="credits-list">
           <h5>Photographs:</h5>
