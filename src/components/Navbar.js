@@ -7,6 +7,7 @@ function Navbar() {
       color: "rgb(3, 85, 31)",
   }
 
+
   return (
     <div>
       <nav className="navbar">
